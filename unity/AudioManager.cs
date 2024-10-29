@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 // Remember to adjust min volume to 0.001 on the inspector
+// And make the sounds either sfx or music
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
