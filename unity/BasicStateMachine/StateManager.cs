@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StateManager : MonoBehaviour
+public class StateManager : MonoBehaviour 
 {
     //Es una referencia al estado en el que nos encontramos actualmente
     BaseState currentState;
@@ -24,6 +24,7 @@ public class StateManager : MonoBehaviour
 
     public void SwitchState(BaseState state)
     {
+        currentState.ExitState(this);
         currentState = state;
         state.EnterState(this);
     }
