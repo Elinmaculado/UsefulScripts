@@ -9,31 +9,23 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         pausePanel.SetActive(false);
+        settingsPanel.SetActive(false);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
             if (isPaused)
             {
-                if (settingsPanel.activeInHierarchy)
-                {
-                    return;
-                }
-                else
-                {
-                Continue(); // Reanudar el juego
-                }
+                Continue();
             }
             else
             {
-                Pause(); // Pausar el juego
+                Pause();
             }
         }
     }
-
     public void Pause()
     {
         pausePanel.SetActive(true);
@@ -44,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     public void Continue() 
     { 
         pausePanel.SetActive(false);
+        settingsPanel.SetActive(false );
         isPaused = false;
         Time.timeScale = 1;
     }
